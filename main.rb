@@ -19,7 +19,7 @@ puts "A word has been generated!\n\n"
 word.delete_at(word.length-1)
 
 # Generate Copy to Keep Track of Progress
-word_copy = word
+word_copy = word.dup
 
 # Loop until Win or Lose
 until lives == 0 || word_copy == []
