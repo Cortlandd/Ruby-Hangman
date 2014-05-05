@@ -29,7 +29,6 @@ until lives == 0 || word_copy == []
 	word.each do |x|
 		if alphabet.include?(x) == true
 			print "_ "
-		print "y"
 		else 
 	   	print "#{x} "
 	   end

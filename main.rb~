@@ -27,11 +27,13 @@ until lives == 0 || word_copy == []
 	# Generate Display
 	puts "Word: "
 	word.each do |x|
+		if alphabet.include?(x) == false
+	   	print "__ "
+	   end
 		if alphabet.include?(x) == true
 			print "_ "
-		else 
-	   	print "#{x} "
-	   end
+		end
+		
 	end
    
    puts "\nLives Remaining: #{lives}\nLetters Remaining: "
