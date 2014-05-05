@@ -7,7 +7,7 @@ turn = 0
 
 # Load Potential Words
 words_file = File.open('words.txt')
-words = dictionary.readlines
+words = words_file.readlines
 words.shuffle!
 
 ### BEGIN ###
@@ -15,19 +15,18 @@ words.shuffle!
 word = words[rand(words.length)].chars.to_a
 puts "A word has been generated!\n\n"
 
-# Fix to remove \r\n from the word
-letters.delete_at(letters.length-1)
-letters.delete_at(letters.length-1)
+# Fix to remove \n from the word
+word.delete_at(word.length-1)
 
 # Generate Copy to Keep Track of Progress
-letters_copy = letters
+word_copy = word
 
 # Loop until Win or Lose
-until lives == 0 || letters_copy == []
+until lives == 0 || word_copy == []
 
 	# Generate Display
 	puts "Word: "
-	letters.each do |x|
+	word.each do |x|
      if alphabet.include?(x) == true
        print "_ "
      else 
@@ -47,26 +46,26 @@ until lives == 0 || letters_copy == []
 	# Check for User Errors
 	until alphabet.include?(guessed_letter) == true
 	   puts "You already guessed that! Try another letter.\n"
-		guess = gets.chomp.upcase.strip
+		guessed_letter = gets.chomp.upcase.strip
 	end
-  
+	
 	# System Response
 	alphabet.delete(guessed_letter)
-	if letters.include?(guessed_letter) == true
-		letters_copy.delete(guessed_letter)
+	if word.include?(guessed_letter) == true
+		word_copy.delete(guessed_letter)
 		puts "\nCorrect!\n"
 	else
 		puts "\nIncorrect\n"
 		lives--
-	end
+	
 
-end
 
 # Check Result
-if letters_copy == []
-	puts "Nice job, you won!"
-else
-	puts "Better luck next time! The correct answer was #{letters.to_s.upcase}" 
-end
-puts "\n"
+	if word_copy == []
+		puts "Nice job, you won!"
+	else
+		puts "Better luck next time! The correct answer was #{word.to_s}" 
+		end
+		puts "\n"
+	end
 end
