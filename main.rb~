@@ -31,6 +31,7 @@ until lives == 0 || word_copy == []
 			print "_ "
 		else 
 	   	print "#{x} "
+	   end
 	end
    
    puts "\nLives Remaining: #{lives}\nLetters Remaining: "
