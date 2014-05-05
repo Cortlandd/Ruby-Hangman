@@ -27,10 +27,10 @@ until lives == 0 || word_copy == []
 	# Generate Display
 	puts "Word: "
 	word.each do |x|
-		if alphabet.include?(x) == true
+		if alphabet.include?(x)
 			print "_ "
 		else 
-	   	print "#{x} "
+			print "#{x} "
 	   end
 	end
    
