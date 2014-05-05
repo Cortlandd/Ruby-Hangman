@@ -1,4 +1,4 @@
-### Simple Hangman Game that Demonstrates basic functions in ruby ###
+#! /usr/bin/ruby
 
 # Initialize Parameters
 alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
