@@ -20,7 +20,7 @@ letters.delete_at(letters.length-1)
 letters.delete_at(letters.length-1)
 
 # Generate Copy to Keep Track of Progress
-letters_copy = letters;
+letters_copy = letters
 
 # Loop until Win or Lose
 until lives == 0 || letters_copy == []
@@ -57,11 +57,8 @@ until lives == 0 || letters_copy == []
 		puts "\nCorrect!\n"
 	else
 		puts "\nIncorrect\n"
-		lives--;
+		lives--
 	end
-	if letters_remaining == []
-	  break
-	end 
 
 end
 
@@ -72,3 +69,4 @@ else
 	puts "Better luck next time! The correct answer was #{letters.to_s.upcase}" 
 end
 puts "\n"
+end
