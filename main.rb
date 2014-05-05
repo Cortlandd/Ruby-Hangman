@@ -2,7 +2,7 @@
 
 # Initialize Parameters
 alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-lives = 7
+lives = 6
 turn = 0
 
 # Load Potential Words
@@ -27,12 +27,12 @@ until lives == 0 || word_copy == []
 	# Generate Display
 	puts "Word: "
 	word.each do |x|
-     if alphabet.include?(x) == true
-       print "_ "
-     else 
-       print "#{x} "
-     end
-   end
+		if alphabet.include?(x) == true
+			print "_ "
+		else 
+	   	print "#{x} "
+	   end
+	end
    
    puts "\nLives Remaining: #{lives}\nLetters Remaining: "
 
@@ -56,16 +56,14 @@ until lives == 0 || word_copy == []
 		puts "\nCorrect!\n"
 	else
 		puts "\nIncorrect\n"
-		lives--
+		lives -= 1
 	end
+
 end
 
-
-	# Check Result
-		if word_copy == []
-			puts "Nice job, you won!\n"
-		else
-			puts "Better luck next time! The correct answer was #{word.to_s}\n" 
-		end
-	end
+# Check Result
+if word_copy == []
+	puts "Nice job, you won!\n"
+else
+	puts "Better luck next time! The correct answer was #{word.to_s}\n" 
 end
